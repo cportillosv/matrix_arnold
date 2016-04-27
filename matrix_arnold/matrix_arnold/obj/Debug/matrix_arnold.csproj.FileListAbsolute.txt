@@ -10,3 +10,9 @@ c:\users\carlos portillo\documents\visual studio 2015\Projects\matrix_arnold\mat
 C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\bin\Debug\matrix_arnold.exe.config
 C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\obj\Debug\matrix_arnold.exe
 C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\obj\Debug\matrix_arnold.pdb
+C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\bin\Debug\matrix_arnold.exe
+C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\bin\Debug\matrix_arnold.pdb
+C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\obj\Debug\matrix_arnold.csprojResolveAssemblyReference.cache
+C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\obj\Debug\matrix_arnold.Form1.resources
+C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\obj\Debug\matrix_arnold.Properties.Resources.resources
+C:\Users\Carlos Portillo\Source\Repos\matrix_arnold\matrix_arnold\matrix_arnold\obj\Debug\matrix_arnold.csproj.GenerateResource.Cache

@@ -19,6 +19,9 @@ namespace matrix_arnold
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            //Removemos los controls previamente, generados
+            this.flowLayoutPanel1.Controls.Clear();
+
             //Validando que no vaya vacio
             if (string.IsNullOrEmpty(txtNum1.Text.Trim()))
             {
