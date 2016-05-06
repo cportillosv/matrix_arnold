@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace matrix_arnold
@@ -44,7 +39,7 @@ namespace matrix_arnold
                     for (int j = 0; j < num2; j++)
                     {
                         NumericUpDown numeric = new NumericUpDown();
-                        numeric.Name = string.Concat("numeric", i, j);
+                        numeric.Name = string.Concat(i,"-", j);
                         numeric.Width = 50;
                 
                         flowLayoutPanel1.Controls.Add(numeric);
@@ -52,11 +47,17 @@ namespace matrix_arnold
                     }
                    
                     //Obtenemos la ultima instancia, del NumericUpDown creado.
-                    NumericUpDown currentNumeric = this.Controls.Find(string.Concat("numeric", i, last), true).FirstOrDefault() as NumericUpDown;
+                    NumericUpDown currentNumeric = this.Controls.Find(string.Concat(i,"-", last), true).FirstOrDefault() as NumericUpDown;
                     //Asignamos un salto de linea en el control flowLayoutControl
                     flowLayoutPanel1.SetFlowBreak(currentNumeric,true);
                 }
 
+                txtNum1.Enabled = false;
+                txtNum2.Enabled = false;
+                btnLeer.Enabled = true;
+                btnGenerate.Enabled = false;
+                btnReGenerar.Enabled = true;
+                
             }
         }
 
@@ -67,6 +68,65 @@ namespace matrix_arnold
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnLeer_Click(object sender, EventArgs e)
+        {
+            int nRow;
+            int nColum;
+
+            //TODO: Asegurarse de que las cajas de texto tenga valores para crear la matriz
+            if (int.TryParse(txtNum1.Text,out nRow) && int.TryParse(txtNum2.Text, out nColum))
+            {
+
+
+                var matrix = new decimal[nRow, nColum];
+                var numerics = flowLayoutPanel1.Controls.OfType<NumericUpDown>();
+
+                foreach (NumericUpDown ctrl in numerics)
+                {
+
+                    var indices = ctrl.Name.Split('-');
+                    matrix[Convert.ToInt32(indices[0]),Convert.ToInt32(indices[1])] = ctrl.Value;
+                        
+                    
+                }
+
+               
+                //Average (Media)
+                decimal average;
+                decimal total = matrix.Cast<decimal>().Sum();
+                average = total / (nRow * nColum);
+             
+                //Average per row
+                //decimal columTotal;
+               
+                //for (int row = 0; row < nRow; row++)
+                //{
+                //    columTotal = 0;
+                //    for (int col = 0; col < nColum; col++)
+                //    {
+                //        columTotal += matrix[row, col];
+                //    }
+
+                //    average = columTotal / nColum;
+                //}
+                
+            }
+           
+
+           
+        }
+
+        private void btnReGenerar_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            txtNum1.Enabled = true;
+            txtNum2.Enabled = true;
+            btnLeer.Enabled = false;
+            btnGenerate.Enabled =true;
+            btnReGenerar.Enabled = false;
+
         }
     }
 }

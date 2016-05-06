@@ -34,6 +34,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnLeer = new System.Windows.Forms.Button();
+            this.btnReGenerar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGenerate
@@ -88,11 +90,35 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "N2:";
             // 
+            // btnLeer
+            // 
+            this.btnLeer.Enabled = false;
+            this.btnLeer.Location = new System.Drawing.Point(1212, 546);
+            this.btnLeer.Name = "btnLeer";
+            this.btnLeer.Size = new System.Drawing.Size(168, 55);
+            this.btnLeer.TabIndex = 9;
+            this.btnLeer.Text = "Leer datos";
+            this.btnLeer.UseVisualStyleBackColor = true;
+            this.btnLeer.Click += new System.EventHandler(this.btnLeer_Click);
+            // 
+            // btnReGenerar
+            // 
+            this.btnReGenerar.Enabled = false;
+            this.btnReGenerar.Location = new System.Drawing.Point(646, 67);
+            this.btnReGenerar.Name = "btnReGenerar";
+            this.btnReGenerar.Size = new System.Drawing.Size(220, 55);
+            this.btnReGenerar.TabIndex = 10;
+            this.btnReGenerar.Text = "Re-Generar";
+            this.btnReGenerar.UseVisualStyleBackColor = true;
+            this.btnReGenerar.Click += new System.EventHandler(this.btnReGenerar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2004, 807);
+            this.Controls.Add(this.btnReGenerar);
+            this.Controls.Add(this.btnLeer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -114,6 +140,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLeer;
+        private System.Windows.Forms.Button btnReGenerar;
     }
 }
 
